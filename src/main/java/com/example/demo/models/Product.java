@@ -1,18 +1,18 @@
 package com.example.demo.models;
 
 
-public class Products {
+public class Product {
 
 
     private int productId;
     private String productName;
     private int productQuantity;
 
-    public Products(){
+    public Product(){
 
     }
 
-    public Products(int productId, String productName, int productQuantity){
+    public Product(int productId, String productName, int productQuantity){
         this.productId = productId;
         this.productName = productName;
         this.productQuantity = productQuantity;

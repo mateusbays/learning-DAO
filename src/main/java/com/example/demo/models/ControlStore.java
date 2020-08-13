@@ -1,19 +1,12 @@
 package com.example.demo.models;
 
-import com.example.demo.models.Products;
-import com.mysql.cj.protocol.Resultset;
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-
-import javax.xml.transform.Result;
 import java.sql.*;
-import java.util.Optional;
 import java.util.Scanner;
 import java.util.ArrayList;
 
 //@SpringBootApplication
 public class ControlStore {
-    static ArrayList<Products> productsList = new ArrayList();
+    static ArrayList<Product> productList = new ArrayList();
     private static Object SQLException;
 
     public static void main(String[] args) {
@@ -27,7 +20,7 @@ public class ControlStore {
             option = ler.nextInt();
 
             if (option == 1) {
-                inserirProduto(args, productsList, ler);
+                inserirProduto(args, productList, ler);
                 return;
             } else if (option == 2) {
                 vender(args, ler);
@@ -113,7 +106,7 @@ public class ControlStore {
             System.out.println("Produto nao encontrado, deseja inserir?\n 1 - Sim \n 2 - Nao ");
             int inserir = ler.nextInt();
             if (inserir == 1) {
-                inserirProduto(args, productsList, ler);
+                inserirProduto(args, productList, ler);
                 return;
             } else {
                 main(args);
@@ -121,10 +114,10 @@ public class ControlStore {
         }
     }
 
-    private static void inserirProduto(String[] args, ArrayList<Products> productsList, Scanner ler) throws SQLException {
+    private static void inserirProduto(String[] args, ArrayList<Product> productList, Scanner ler) throws SQLException {
 
 
-        Products produto = new Products();
+        Product produto = new Product();
 
 
         System.out.println("Qual o nome do produto que deseja inserir? ");
